@@ -27,6 +27,12 @@ def t5():
     l1 = list(range(0, 1001))
 
 
+def t6():
+    l1 = []
+    for i in range(0, 1001):
+        l1 += [i]
+
+
 print('test list fun')
 r1 = Timer('t1()', 'from __main__ import t1')
 print('+ use times', r1.timeit(1000))
@@ -43,3 +49,5 @@ print('range', r4.timeit(1000))
 r5 = Timer('t5()', 'from __main__ import t5')
 print('list range', r5.timeit(1000))
 
+r6 = Timer('t6()', 'from __main__ import t6')
+print('list range', r6.timeit(1000))

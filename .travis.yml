@@ -3,4 +3,4 @@ sudo: required
 python:
     - '3.6'
 script:
-    - python listDemo.py
+    - python list_demo/listDemo.py

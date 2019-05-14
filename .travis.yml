@@ -12,4 +12,4 @@ addons:
     ssh_known_hosts: 207.148.113.185
 
 after_success:
-- ssh root@207.148.113.185 'cd root/algorithms && git pull && python list_demo/listDemo.py > read.txt'
+- ssh 207.148.113.185 'cd root/algorithms && git pull && python list_demo/listDemo.py > read.txt'

@@ -1,15 +1,17 @@
 language: python
 sudo: required
+addons:
+      ssh_known_hosts: 207.148.113.185
 python:
 - '3.6'
 script:
 - python list_demo/listDemo.py
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_1fca6a985142_key -iv $encrypted_1fca6a985142_iv
   -in id_rsa_deploy.enc -out ~/.ssh/id_rsa_deploy -d
+- eval "$(ssh-agent -s)"
 - chmod 600 ~/.ssh/id_rsa_deploy
-addons:
-    ssh_known_hosts: 207.148.113.185
-
+- ssh-add ~/.ssh/id_rsa_deploy
 after_success:
-- ssh 207.148.113.185 'cd root/algorithms && git pull && python list_demo/listDemo.py > read.txt'
+- ssh root@207.148.113.185 'cd root/algorithms && git pull && python list_demo/listDemo.py > read.txt'

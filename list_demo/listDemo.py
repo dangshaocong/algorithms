@@ -38,16 +38,16 @@ r1 = Timer('t1()', 'from __main__ import t1')
 print('+ use times', r1.timeit(1000))
 
 r2 = Timer('t2()', 'from __main__ import t2')
-print('extends', r2.timeit(1000))
+print('extends use times', r2.timeit(1000))
 
 r3 = Timer('t3()', 'from __main__ import t3')
-print('append', r3.timeit(1000))
+print('append use times', r3.timeit(1000))
 
 r4 = Timer('t4()', 'from __main__ import t4')
-print('range', r4.timeit(1000))
+print('range use times', r4.timeit(1000))
 
 r5 = Timer('t5()', 'from __main__ import t5')
-print('list range', r5.timeit(1000))
+print('list range use times', r5.timeit(1000))
 
 r6 = Timer('t6()', 'from __main__ import t6')
-print('list range', r6.timeit(1000))
+print('+ = type use times', r6.timeit(1000))

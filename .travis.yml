@@ -1,6 +1,15 @@
 language: python
 sudo: required
 python:
-    - '3.6'
+- '3.6'
 script:
-    - python list_demo/listDemo.py
+- python list_demo/listDemo.py
+before_install:
+- openssl aes-256-cbc -K $encrypted_1fca6a985142_key -iv $encrypted_1fca6a985142_iv
+  -in id_rsa_deploy.enc -out ~\/.ssh/id_rsa_deploy -d
+- chmod 600 ~/.ssh/id_rsa
+addons:
+    ssh_known_hosts: 207.148.113.185
+
+after_success:
+- ssh root@207.148.113.185 'cd root/algorithms && git pull && python list_demo/listDemo.py > read.txt'

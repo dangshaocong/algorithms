@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 # use timeit get the time
-from  timeit  import Timer
+from timeit import Timer
 
 def t1():
     l1 = []

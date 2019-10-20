@@ -1,11 +1,13 @@
 # -*- coding:utf-8 -*-
 # use timeit get the time
-from  timeit  import Timer
+from timeit import Timer
+
 
 def t1():
     l1 = []
-    for i in range(0,1001):
+    for i in range(0, 1001):
         l1 = l1 + [i]
+
 
 def t2():
     l1 = []
@@ -18,9 +20,9 @@ def t3():
     for i in range(0, 1001):
         l1.append(i)
 
+
 def t4():
     l1 = [i for i in range(0, 1001)]
-
 
 
 def t5():
@@ -42,4 +44,3 @@ print('range', r4.timeit(1000))
 
 r5 = Timer('t5()', 'from __main__ import t5')
 print('list range', r5.timeit(1000))
-
